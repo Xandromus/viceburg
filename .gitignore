@@ -1,4 +1,3 @@
 node_modules
-db/schema.sql
-db/seeds.sql
+db
 .env

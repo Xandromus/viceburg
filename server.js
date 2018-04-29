@@ -18,7 +18,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // sets up the Express app to serve static files
-app.use(express.static(path.join(__dirname, '/app/public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // routes?
 
