@@ -6,7 +6,7 @@
   {{#each burgers}}
     {{#unless devoured}}
       <li>
-        {{id}}.
+        {{math @index "+" 1}}.
 				{{burger_name}}
 
         <button data-burgerid="{{this.id}}" class="change-burger">Devour!</button>
