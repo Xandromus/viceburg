@@ -1,24 +1,9 @@
-$(".delburger").on("click", function(event) {
-    let id = $(this).data("burgerid");
-
-    // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
   $("#addburger").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     let newBurger = {
-      burger: $("#addburger [name=burger]").val().trim()
+      burger: $("#burger").val().trim()
     };
 
     // Send the POST request.
@@ -34,23 +19,24 @@ $(".delburger").on("click", function(event) {
     );
   });
 
-  $("#updateburger").on("submit", function(event) {
+  $(".change-burger").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    let id = $("[name=id]").val().trim();
+    let id = $(this).data("id");
+    let newDevoured = $(this).data("newdevoured");
 
-    var updatedBurger = {
-      burger: $("#updateburger [name=burger]").val().trim()
+    var newDevouredState = {
+      devoured: newDevoured
     };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: updatedBurger
+      data: newDevouredState
     }).then(
       function() {
-        console.log("updated id ", id);
+        console.log("changed devoured to ", newDevoured);
         // Reload the page to get the updated list
         location.reload();
       }
