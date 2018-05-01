@@ -21,8 +21,10 @@
   {{#each burgers}}
     {{#if devoured}}
       <li>
-        {{id}}.
+        {{math @index "+" 1}}.
 				{{burger_name}}
+
+        <button data-burgerid="{{this.id}}" class="delete-burger">Delete!</button>
     </li>
     {{/if}}
   {{/each}}
