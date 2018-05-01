@@ -1,14 +1,14 @@
-let connect = require("./connection.js");
+let connection = require("./connection.js");
 
-function printQuestionMarks(num) {
-    let arr = [];
+// function printQuestionMarks(num) {
+//     let arr = [];
 
-    for (let i = 0; i < num; i++) {
-        arr.push("?");
-    }
+//     for (let i = 0; i < num; i++) {
+//         arr.push("?");
+//     }
 
-    return arr.toString();
-}
+//     return arr.toString();
+// }
 
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
@@ -34,7 +34,7 @@ function objToSql(ob) {
 
 let orm = {
 
-    selectAll: (tableInput, cb) => {
+    selectAll: function(tableInput, cb) {
         let queryString = "SELECT * FROM " + tableInput + ";";
 
         console.log(queryString);
@@ -44,15 +44,15 @@ let orm = {
             cb(result);
         });
     },
-    insertOne: (table, cols, vals, cb) => {
+    insertOne: function(table, cols, vals, cb) {
         let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
+        queryString += "VALUES ('";
+        queryString += vals;
+        queryString += "') ";
 
         console.log(queryString);
 
@@ -62,7 +62,7 @@ let orm = {
             cb(result);
         });
     },
-    updateOne: (table, objColVals, condition, cb) => {
+    updateOne: function(table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
 
         queryString += " SET ";

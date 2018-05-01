@@ -3,9 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-let router = require("./controllers/burgers_controllers.js");
-let burger = require("./models/burger.js");
-
 // sets up the Express App
 // =============================================================
 const app = express();
@@ -24,7 +21,8 @@ app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, '/public')));
 
 // routes?
-
+let routes = require("./controllers/burgers_controllers.js");
+app.use("/", routes);
 
 // starts the server to begin listening
 // =============================================================
