@@ -5,10 +5,10 @@ html {
 }
 
 body {
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     position: relative;
     font-family: 'Ubuntu', sans-serif;
-    position: relative;
 }
 
 body::after {
@@ -21,7 +21,8 @@ body::after {
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
+    overflow: hidden;
   }
 
   h2 {
@@ -52,7 +53,6 @@ body::after {
     box-sizing: border-box;
     min-height: 100%;
     padding: 0 0 100px;
-    position: relative;
 }
 
 
