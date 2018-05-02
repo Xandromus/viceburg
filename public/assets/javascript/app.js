@@ -7,17 +7,20 @@ $(function () {
       burger: $("#burger").val().trim()
     };
 
-    // Send the POST request.
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function () {
-        console.log("added new burger");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+    if (newBurger.burger !== "") {
+
+      // Send the POST request.
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+      }).then(
+        function () {
+          console.log("added new burger");
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    }
   });
 
   $(".change-burger").on("click", function (event) {
