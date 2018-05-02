@@ -4,7 +4,7 @@ $(function () {
     event.preventDefault();
 
     let newBurger = {
-      burger: $("#burger").val().trim()
+      burger: $("#burger").val().trim().toLowerCase()
     };
 
     if (newBurger.burger !== "") {

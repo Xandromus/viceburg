@@ -39,6 +39,7 @@ body::after {
       align-items: center;
       margin: 10px 0;
       color: #151515;
+      text-transform: capitalize;
   }
 
   .btn-fire {
