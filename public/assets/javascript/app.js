@@ -20,6 +20,7 @@ $(function () {
           location.reload();
         }
       );
+      $("#burger").val("");
     }
   });
 
