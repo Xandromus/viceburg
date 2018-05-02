@@ -19,7 +19,7 @@
   <input type="text" class="form-control" id="burger" name="burger" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
-        <button type="submit" class="btn btn-large btn-primary d-block mx-auto">Add Burger</button>
+        <button type="submit" class="btn btn-large btn-fire d-block mx-auto">Add Burger</button>
       </form>
     </div>
     <div class="container mt-5 card">
@@ -32,7 +32,7 @@
             <li>
               {{math @index "+" 1}}. {{burger_name}}
 
-              <button data-burgerid="{{this.id}}" class="change-burger btn btn-large btn-primary">Give in</button>
+              <button data-burgerid="{{this.id}}" class="change-burger btn btn-large btn-fire">Give in</button>
             </li>
             {{/unless}} {{/each}}
           </ul>
@@ -45,7 +45,7 @@
             <li>
               {{math @index "+" 1}}. {{burger_name}}
 
-              <button data-burgerid="{{this.id}}" class="delete-burger btn btn-large btn-primary">Purge</button>
+              <button data-burgerid="{{this.id}}" class="delete-burger btn btn-large btn-purge">Purge</button>
             </li>
             {{/if}} {{/each}}
           </ul>
