@@ -69,3 +69,15 @@ $(function () {
   });
 
 });
+
+let temp_number = 1;
+$('ul.temptation li span').each(function() {
+     $(this).text(temp_number)
+     temp_number++;
+}); 
+
+let glut_number = 1;
+$('ul.gluttony li span').each(function() {
+  $(this).text(glut_number)
+  glut_number++;
+}); 

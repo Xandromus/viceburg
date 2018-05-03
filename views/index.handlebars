@@ -21,13 +21,14 @@
         <div class="col-6">
           <h2 class="text-center">Temptation</h2>
 
-          <ul>
+          <ul class="temptation">
             {{#each burgers}} {{#unless devoured}}
             <li>
-              {{math @index "+" 1}}. {{burger_name}}
+              <div>
+              <span></span>. {{burger_name}}
+              </div>
               <div>
                 <button data-burgerid="{{this.id}}" data-newdevoured="{{devoured}}" class="change-burger btn btn-large btn-fire">Give in</button>
-                <button data-burgerid="{{this.id}}" class="update-burger btn btn-large btn-update">Update</button>
               </div>
             </li>
             {{/unless}} {{/each}}
@@ -36,10 +37,13 @@
         <div class="col-6">
           <h2 class="text-center">Gluttony</h2>
 
-          <ul>
+          <ul class="gluttony">
             {{#each burgers}} {{#if devoured}}
             <li>
-              {{math @index "+" 1}}. {{burger_name}}
+              <div>
+              <span></span>. {{burger_name}}
+              </div>
+              <div>
               <div>
                 <button data-burgerid="{{this.id}}" data-newdevoured="{{this.devoured}}" class="change-burger btn btn-large btn-tempt">Tempt</button>
                 <button data-burgerid="{{this.id}}" class="delete-burger btn btn-large btn-purge">Purge</button>
