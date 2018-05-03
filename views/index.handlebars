@@ -3,21 +3,15 @@
     <div class="container">
       <h2 class="text-center">Add a Burger</h2>
       <form id="addburger" class="justify-content-center">
-        
-        {{!-- <div class="input-group">
-          <span class="input-group-addon">
-                <i class="fa fa-plus"></i>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="fa fa-cutlery"></i>
             </span>
-            <input type="text" id="burger" name="burger" class="d-block mx-auto">
-            
-        </div> --}}
-        
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1"><i class="fa fa-cutlery"></i></span>
-  </div>
-  <input type="text" class="form-control" id="burger" name="burger" aria-label="Username" aria-describedby="basic-addon1">
-</div>
+          </div>
+          <input type="text" class="form-control" id="burger" name="burger" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
 
         <button type="submit" class="btn btn-large btn-fire d-block mx-auto">Add Burger</button>
       </form>
@@ -31,8 +25,10 @@
             {{#each burgers}} {{#unless devoured}}
             <li>
               {{math @index "+" 1}}. {{burger_name}}
-
-              <button data-burgerid="{{this.id}}" class="change-burger btn btn-large btn-fire">Give in</button>
+              <div>
+                <button data-burgerid="{{this.id}}" data-newdevoured="{{devoured}}" class="change-burger btn btn-large btn-fire">Give in</button>
+                <button data-burgerid="{{this.id}}" class="update-burger btn btn-large btn-update">Update</button>
+              </div>
             </li>
             {{/unless}} {{/each}}
           </ul>
@@ -44,8 +40,10 @@
             {{#each burgers}} {{#if devoured}}
             <li>
               {{math @index "+" 1}}. {{burger_name}}
-
-              <button data-burgerid="{{this.id}}" class="delete-burger btn btn-large btn-purge">Purge</button>
+              <div>
+                <button data-burgerid="{{this.id}}" data-newdevoured="{{this.devoured}}" class="change-burger btn btn-large btn-tempt">Tempt</button>
+                <button data-burgerid="{{this.id}}" class="delete-burger btn btn-large btn-purge">Purge</button>
+              </div>
             </li>
             {{/if}} {{/each}}
           </ul>

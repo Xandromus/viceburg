@@ -42,21 +42,21 @@ body::after {
       text-transform: capitalize;
   }
 
-  .btn-fire {
+  .btn-fire, .btn-tempt {
       background-color: #3772FF;
       color: white;
   }
 
-  .btn-fire:hover {
+  .btn-fire:hover, .btn-tempt:hover {
     background-color: #D71016;
 }
 
-.btn-purge {
+.btn-update, .btn-purge {
     background-color: #D71016;
     color: white;
 }
 
-.btn-purge:hover {
+.btn-update:hover, .btn-purge:hover {
   background-color: #3772FF;
 }
 

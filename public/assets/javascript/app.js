@@ -27,11 +27,22 @@ $(function () {
   $(".change-burger").on("click", function (event) {
 
     let id = $(this).data("burgerid");
+    let newDevoured = $(this).data("newdevoured");
+
+    if (newDevoured === 0) {
+      newDevoured = 1;
+    } else {
+      newDevoured = 0;
+    }
+
+    let newDevouredState = {
+      devoured: newDevoured
+    };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: { devoured: true }
+      data: newDevouredState
     }).then(
       function () {
         console.log("moved to devoured column");
