@@ -42,12 +42,12 @@ body::after {
       text-transform: capitalize;
   }
 
-  .btn-fire, .btn-tempt {
+  .btn-fire, .btn-tempt, .btn-add {
       background-color: #3772FF;
       color: white;
   }
 
-  .btn-fire:hover, .btn-tempt:hover {
+  .btn-fire:hover, .btn-tempt:hover, .btn-add:hover {
     background-color: #D71016;
 }
 
@@ -146,3 +146,72 @@ footer p {
     font-size: 1.5rem;
 }
 
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 991px) {
+    h2, .logo {
+        font-size: 1.4rem;
+    }
+    header {
+        font-size: 1.2rem;
+    }
+    .input-group {
+        max-width: 75%;;
+    }
+    ul {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h2, .logo {
+        font-size: 1.2rem;
+    }
+    .logo-holder {
+        max-height: 45px;
+    }
+    .img-logo {
+        height: 40px;
+    }
+    header {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .logo-holder {
+        max-height: 25px;
+    }
+    .img-logo {
+        height: 20px;
+    }
+    header {
+        font-size: .8rem;
+    }
+    .input-group {
+        max-width: 90%;;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    body {
+        font-size: .8rem;
+    }
+    .btn-fire, .btn-purge, .btn-tempt {
+        font-size: .7rem;
+    }
+    header {
+        height: 80px;
+        font-size: .7rem;
+    }
+    .logo-holder {
+        max-height: 20px;
+        margin-right: 0px;
+    }
+    .img-logo {
+        height: 15px;
+    }
+    footer p {
+        font-size: 1.1rem;
+    }
+}

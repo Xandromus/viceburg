@@ -80,4 +80,6 @@ let glut_number = 1;
 $('ul.gluttony li span').each(function() {
   $(this).text(glut_number)
   glut_number++;
-}); 
+});
+
+$("#burger").focus();
