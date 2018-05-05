@@ -7,7 +7,7 @@ ViceBurg is a Node and Express app deployed to Heroku that offers a burger loggi
 
 [ViceBurg](https://viceburg.herokuapp.com/)
 
-![ViceBurg](http://www.rapstine.com/images/viceburg.png)
+![ViceBurg](https://github.com/Xandromus/viceburg/blob/master/viceburg.png)
 
 ViceBurg is a food logging journal which focuses on burgers. Users can add various types of burgers that they'd like to eat, which then show up in the Temptation column. If users decide to 'Give In', the burger moves to the Gluttony column. From the Gluttony column, users can then choose to 'Tempt' themselves again (moving the burger back to the Temptation column), or they can 'Purge' the burger from their list entirely.
 
