@@ -1,4 +1,4 @@
-// variable declarations for required packages and imported files/functions
+// variable declarations for required packages
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -12,29 +12,17 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// variable declaration for handlebars
 const exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({
-  defaultLayout: "main",
-  helpers:{
-    // Function to do basic mathematical operation in handlebar
-    math: function(lvalue, operator, rvalue) {lvalue = parseFloat(lvalue);
-        rvalue = parseFloat(rvalue);
-        return {
-            "+": lvalue + rvalue,
-            "-": lvalue - rvalue,
-            "*": lvalue * rvalue,
-            "/": lvalue / rvalue,
-            "%": lvalue % rvalue
-        }[operator];
-    }
-}}));
+// handlebars configuration
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // sets up the Express app to serve static files
 app.use(express.static(path.join(__dirname, '/public')));
 
-// routes?
+// import routes and give the server access to them
 let routes = require("./controllers/burgers_controllers.js");
 app.use(routes);
 
@@ -42,4 +30,4 @@ app.use(routes);
 // =============================================================
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
-  });
+});

@@ -1,14 +1,5 @@
+// variable declarations for required files/functions
 let connection = require("./connection.js");
-
-// function printQuestionMarks(num) {
-//     let arr = [];
-
-//     for (let i = 0; i < num; i++) {
-//         arr.push("?");
-//     }
-
-//     return arr.toString();
-// }
 
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
@@ -32,9 +23,11 @@ function objToSql(ob) {
     return arr.toString();
 }
 
+// ORM object
 let orm = {
 
-    selectAll: function(tableInput, cb) {
+    // function to get all burgers from database
+    selectAll: function (tableInput, cb) {
         let queryString = "SELECT * FROM " + tableInput + ";";
 
         console.log(queryString);
@@ -44,7 +37,8 @@ let orm = {
             cb(result);
         });
     },
-    insertOne: function(table, cols, vals, cb) {
+    // function to add burger into database
+    insertOne: function (table, cols, vals, cb) {
         let queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -62,7 +56,8 @@ let orm = {
             cb(result);
         });
     },
-    changeOne: function(table, objColVals, condition, cb) {
+    // function to update status of burger in database
+    changeOne: function (table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -78,14 +73,15 @@ let orm = {
             cb(result);
         });
     },
-    deleteOne: function(table, condition, cb) {
+    // function to delete a burger from database
+    deleteOne: function (table, condition, cb) {
         let queryString = "DELETE FROM " + table;
 
         queryString += " WHERE ";
         queryString += condition;
 
         console.log(queryString);
-        
+
         connection.query(queryString, function (err, result) {
             if (err) throw err;
 
@@ -94,4 +90,5 @@ let orm = {
     }
 };
 
+// export ORM for Burger model to use
 module.exports = orm;

@@ -1,3 +1,5 @@
+/* BASIC STYLES */
+
 html {
     max-height: 100%;
     max-width: 100%;
@@ -25,50 +27,25 @@ body::after {
     position: absolute;
     z-index: -1;
     overflow: hidden;
-  }
+}
 
-  h2 {
+h2 {
     font-family: 'Lobster', cursive;
-  }
-
-  li {
-      list-style-type: none;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 0;
-      color: #151515;
-      text-transform: capitalize;
-  }
-
-  .btn-fire, .btn-tempt, .btn-add {
-      background-color: #3772FF;
-      color: white;
-  }
-
-  .btn-fire:hover, .btn-tempt:hover, .btn-add:hover {
-    background-color: #D71016;
 }
 
-.btn-update, .btn-purge {
-    background-color: #D71016;
-    color: white;
+li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    color: #151515;
+    text-transform: capitalize;
 }
 
-.btn-update:hover, .btn-purge:hover {
-  background-color: #3772FF;
-}
 
-  .card {
-      background-color: rgba(255, 255, 255, .7);
-      padding: 10px;
-  }
 
-.input-group {
-    max-width: 50%;
-    margin: 0 auto;
-}
 /* WRAPPER */
 
 .wrapper {
@@ -76,6 +53,7 @@ body::after {
     min-height: 100%;
     padding: 0 0 100px;
 }
+
 
 
 /* HEADER */
@@ -111,6 +89,7 @@ main {
 }
 
 
+
 /* MIDDLE */
 
 .middle {
@@ -120,6 +99,54 @@ main {
     height: 100%;
     margin: 0 auto;
 }
+
+
+
+/* CARD AREA */
+
+.card {
+    background-color: rgba(255, 255, 255, .7);
+    padding: 10px;
+}
+
+
+
+/* BUTTONS */
+
+.btn-fire,
+.btn-tempt,
+.btn-add {
+    background-color: #3772FF;
+    color: white;
+}
+
+.btn-fire:hover,
+.btn-tempt:hover,
+.btn-add:hover {
+    background-color: #D71016;
+}
+
+.btn-update,
+.btn-purge {
+    background-color: #D71016;
+    color: white;
+}
+
+.btn-update:hover,
+.btn-purge:hover {
+    background-color: #3772FF;
+}
+
+
+
+/* INPUT */
+
+.input-group {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+
 
 /* FOOTER */
 
@@ -146,25 +173,32 @@ footer p {
     font-size: 1.5rem;
 }
 
+
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 991px) {
-    h2, .logo {
+    h2,
+    .logo {
         font-size: 1.4rem;
     }
     header {
         font-size: 1.2rem;
     }
-    .input-group {
-        max-width: 75%;;
-    }
     ul {
         padding-left: 0px;
+    }
+    .input-group {
+        max-width: 75%;
     }
 }
 
 @media screen and (max-width: 767px) {
-    h2, .logo {
+    header {
+        font-size: 1rem;
+    }
+    h2,
+    .logo {
         font-size: 1.2rem;
     }
     .logo-holder {
@@ -173,32 +207,26 @@ footer p {
     .img-logo {
         height: 40px;
     }
-    header {
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 510px) {
+    header {
+        font-size: .8rem;
+    }
     .logo-holder {
         max-height: 25px;
     }
     .img-logo {
         height: 20px;
     }
-    header {
-        font-size: .8rem;
-    }
     .input-group {
-        max-width: 90%;;
+        max-width: 90%;
     }
 }
 
 @media screen and (max-width: 385px) {
     body {
         font-size: .8rem;
-    }
-    .btn-fire, .btn-purge, .btn-tempt {
-        font-size: .7rem;
     }
     header {
         height: 80px;
@@ -210,6 +238,11 @@ footer p {
     }
     .img-logo {
         height: 15px;
+    }
+    .btn-fire,
+    .btn-purge,
+    .btn-tempt {
+        font-size: .7rem;
     }
     footer p {
         font-size: 1.1rem;
